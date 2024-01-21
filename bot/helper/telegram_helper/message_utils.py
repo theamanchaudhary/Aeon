@@ -320,6 +320,6 @@ async def BotPm_check(message, button=None):
     except Exception as e:
         if button is None:
             button = ButtonMaker()
-        _msg = "You haven't initiated the bot in a private message!"
+        _msg = "You haven't initiated the bot in a private message!🥲"
         button.ibutton("Start", f"aeon {user_id} pmc", 'header')
         return _msg, button
