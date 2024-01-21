@@ -76,9 +76,9 @@ class MirrorLeechListener:
 
     async def onDownloadStart(self):
         if config_dict['LEECH_LOG_ID']:
-            msg = f'<b>Task Started</b>\n\n'
-            msg += f'<b>• Task by:</b> {self.tag}\n'
-            msg += f'<b>• User ID: </b><code>{self.message.from_user.id}</code>'
+            msg = f'<b>Task Started 😂</b>\n\n'
+            msg += f'<b>• Task by🙂:</b> {self.tag}\n'
+            msg += f'<b>• User ID➡️: </b><code>{self.message.from_user.id}</code>'
             self.linkslogmsg = await sendCustomMsg(config_dict['LEECH_LOG_ID'], msg)
         user_dict = user_data.get(self.message.from_user.id, {})
         self.botpmmsg = await sendCustomMsg(self.message.from_user.id, '<b>Task started</b>')
@@ -464,9 +464,9 @@ class MirrorLeechListener:
                 self.sameDir['tasks'].remove(self.uid)
                 self.sameDir['total'] -= 1
         msg = f'Hey, {self.tag}!\n'
-        msg += 'Your download has been stopped!\n\n'
-        msg += f'<b>Reason:</b> {escape(error)}\n'
-        msg += f'<b>Elapsed:</b> {get_readable_time(time() - self.message.date.timestamp())}'
+        msg += 'Your download has been stopped!🙁\n\n'
+        msg += f'<b>Reason🙂:</b> {escape(error)}\n'
+        msg += f'<b>Elapsed⏱️:</b> {get_readable_time(time() - self.message.date.timestamp())}'
         x = await sendMessage(self.message, msg, button)
         await delete_links(self.message)
         if self.botpmmsg:
@@ -505,9 +505,9 @@ class MirrorLeechListener:
                 del download_dict[self.uid]
             count = len(download_dict)
         msg = f'Hey, {self.tag}!\n'
-        msg += 'Your upload has been stopped!\n\n'
-        msg += f'<b>Reason:</b> {escape(error)}\n'
-        msg += f'<b>Elapsed:</b> {get_readable_time(time() - self.message.date.timestamp())}'
+        msg += 'Your upload has been stopped!🙁\n\n'
+        msg += f'<b>Reason🙂:</b> {escape(error)}\n'
+        msg += f'<b>Elapsed⏱️:</b> {get_readable_time(time() - self.message.date.timestamp())}'
         x = await sendMessage(self.message, msg)
         if self.linkslogmsg:
             await deleteMessage(self.linkslogmsg)
